@@ -1,7 +1,7 @@
 # FastAPI Blood Donation Management System
 
-This project is a **FastAPI-based web application** that provides both **user login** and **admin login** functionalities for managing a **blood donation system**.  
-It focuses on backend development, database integration, and interactive frontend features.
+This project is a **FastAPI-based web application** designed for a **blood donation management system**.  
+It supports both **user login** and **admin login**, with database integration using **MySQL** and a web interface built using **HTML, CSS, and JavaScript**.
 
 ---
 
@@ -13,13 +13,13 @@ It focuses on backend development, database integration, and interactive fronten
 - Register as a blood donor
 - Search for blood availability and donors
 - Chatbot support implemented using JavaScript
-- User-friendly web interface
+- Simple and user-friendly web interface
 
 ### 🛠️ Admin Features
 - Admin login system
-- View donor and blood request data
-- Manage records (view, update, delete)
-- Dashboard-style data access
+- View blood requests and donor data
+- Manage records (view, edit, delete)
+- Dashboard-style access to database information
 
 ---
 
@@ -28,9 +28,8 @@ It focuses on backend development, database integration, and interactive fronten
 - **Backend:** Python, FastAPI  
 - **Frontend:** HTML, CSS, JavaScript (Jinja2 Templates)  
 - **Database:** MySQL  
-- **Database Connectivity:** MySQL Connector / SQL queries  
-- **Version Control & Tools:** Git, GitHub  
-
+- **Database Connectivity:** Python–MySQL connector  
+- **Version Control:** Git & GitHub  
 
 ---
 
@@ -52,12 +51,14 @@ fastapi_login/
 └── README.md # Project documentation
 ```
 
+
 ---
 
 ## 📌 Learning Outcomes
 
 - Implemented user and admin authentication
-- Built RESTful backend services using FastAPI
+- Built backend APIs using FastAPI
+- Integrated MySQL database with Python
 - Used JavaScript for chatbot and search functionality
 - Followed clean project structure and GitHub best practices
 
@@ -65,9 +66,9 @@ fastapi_login/
 
 ## 🔐 Security & Best Practices
 
-- Virtual environments and database files are excluded using `.gitignore`
-- No credentials or personal data are committed to the repository
-- Clean and maintainable code structure
+- Sensitive files are excluded using `.gitignore`
+- No credentials or personal data are committed to GitHub
+- Code is organized for readability and maintainability
 
 ---
 
@@ -81,3 +82,4 @@ GitHub: https://github.com/sreyas1818
 ## 📜 License
 
 This project is created for **learning and academic purposes**.
+
