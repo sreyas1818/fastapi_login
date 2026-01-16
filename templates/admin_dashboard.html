@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+        }
+
+        .header {
+            background-color: #0d47a1;
+            color: white;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h2 {
+            margin: 0;
+        }
+
+        .logout {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border: 1px solid white;
+            padding: 6px 12px;
+            border-radius: 4px;
+        }
+
+        .logout:hover {
+            background-color: white;
+            color: #0d47a1;
+        }
+
+        /* NEW: SWITCH BUTTONS */
+        .switch-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 25px 0;
+            background: #e3f2fd;
+        }
+
+        .switch-container a {
+            padding: 12px 28px;
+            background: #1976d2;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .switch-container a.request {
+            background: #e53935;
+        }
+
+        .switch-container a:hover {
+            opacity: 0.9;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background-color: #1976d2;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .action a {
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .edit {
+            color: #2e7d32;
+        }
+
+        .delete {
+            color: #d32f2f;
+        }
+
+        .edit:hover,
+        .delete:hover {
+            text-decoration: underline;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h2>Admin Dashboard – Blood Donors</h2>
+    <a href="/admin/logout" class="logout">Logout</a>
+</div>
+
+<!-- NEW: REGISTER / REQUEST SWITCH -->
+<div class="switch-container">
+    <a href="/admin/dashboard">Donor Registrations</a>
+    <a href="/admin/requests" class="request">Blood Requests</a>
+</div>
+
+<div class="container">
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Blood Group</th>
+            <th>City</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        
+
+        </tr>
+
+        {% if donors|length == 0 %}
+        <tr>
+            <td colspan="5" class="empty">No donors registered yet</td>
+        </tr>
+        {% endif %}
+
+        {% for d in donors %}
+        <tr>
+            <td>{{ d.name }}</td>
+            <td>{{ d.blood_group }}</td>
+            <td>{{ d.city }}</td>
+            <td>{{ d.phone }}</td>
+            <td class="action">
+                <a href="/edit/{{ d.id }}" class="edit">Edit</a>
+                |
+                <a href="/delete/{{ d.id }}" class="delete"
+                   onclick="return confirm('Are you sure you want to delete this donor?');">
+                   Delete
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+</body>
+</html>

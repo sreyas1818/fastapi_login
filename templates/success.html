@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success</title>
+    <meta http-equiv="refresh" content="3;url=/home">
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #2e7d32, #43a047);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: white;
+            width: 360px;
+            padding: 40px;
+            border-radius: 14px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 48px;
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 12px 22px;
+            background-color: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background-color: #1b5e20;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="icon">✔️</div>
+
+    <h2>Success</h2>
+
+    <p><b>{{ message }}</b></p>
+
+    <a href="/home">Back to Home</a>
+
+
+</div>
+
+</body>
+</html>

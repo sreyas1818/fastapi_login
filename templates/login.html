@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blood Donation System</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #c62828, #e53935);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .card {
+            background: #ffffff;
+            width: 380px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 8px;
+            color: #b71c1c;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 15px;
+            transition: 0.3s ease;
+        }
+
+        /* User Login – DEFAULT */
+        .user-btn {
+            background-color: #2e7d32;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .user-btn:hover {
+            background-color: #1b5e20;
+        }
+
+        /* Admin Login – Secondary */
+        .admin-btn {
+            border: 2px solid #1565c0;
+            color: #1565c0;
+            background-color: #ffffff;
+        }
+
+        .admin-btn:hover {
+            background-color: #1565c0;
+            color: white;
+        }
+
+        .note {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <h2>Blood Donation System</h2>
+    <p>Choose how you want to continue</p>
+
+    <!-- DEFAULT USER LOGIN -->
+    <a href="/user/login" class="btn user-btn">
+        User Login / Register
+    </a>
+
+    <!-- ADMIN LOGIN -->
+    <a href="/admin/login" class="btn admin-btn">
+        Admin Login
+    </a>
+
+    <div class="note">
+        Donate blood, save lives ❤️
+    </div>
+
+</div>
+
+</body>
+</html>

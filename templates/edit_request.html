@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Blood Request</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: white;
+            width: 420px;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #e53935;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #e53935;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #c62828;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 18px;
+            text-decoration: none;
+            color: #1976d2;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <h2>Edit Blood Request</h2>
+
+    <form method="post" action="/admin/request/update/{{ request_data.id }}">
+
+        <label>Patient Name</label>
+        <input type="text" name="patient_name" value="{{ request_data.patient_name }}" required>
+
+        <label>Units</label>
+        <input type="number" name="units" value="{{ request_data.units }}" required>
+
+        <label>Hospital</label>
+        <input type="text" name="hospital" value="{{ request_data.hospital }}" required>
+
+        <label>City</label>
+        <input type="text" name="city" value="{{ request_data.city }}" required>
+
+        <label>Contact</label>
+        <input type="text" name="contact" value="{{ request_data.contact }}" required>
+
+        <label>Notes</label>
+        <textarea name="notes" rows="3">{{ request_data.notes }}</textarea>
+
+        <button type="submit">Update Request</button>
+    </form>
+
+    <a href="/admin/requests">← Back to Requests</a>
+
+</div>
+
+</body>
+</html>
